@@ -1,0 +1,237 @@
+html {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    display: inline-block;
+    text-transform: uppercase;
+    color: #000;
+}
+
+ul {
+    list-style-type: none;
+}
+
+span {
+    display: inline-block;
+}
+
+.container {
+    padding: 0 30px;
+    position: relative;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+}
+
+.main-nav ul {
+    display: flex;
+}
+
+.main-nav ul li {
+    padding: 0 20px;
+}
+
+.main-nav ul li a {
+    font-size: 0.9rem;
+}
+
+.cart-icon {
+    width: 50px;
+    height: 45px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-top: -15px;
+}
+
+.cart-icon .shopping-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.cart-icon .item-count {
+    position: absolute;
+    font-size: 10px;
+    font-weight: 700;
+    bottom: 12px;
+}
+
+.cart {
+    width: 300px;
+    height: 250px;
+    border: 1px solid #000;
+    overflow: scroll;
+    position: absolute;
+    right: 0;
+    display: none;
+    background-color: #FEFEFE;
+    padding: 10px;
+}
+
+.cart.show {
+    display: block;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.item-image img {
+    width: 50px;
+}
+
+.cart-item-details {
+    display: flex;
+    flex-direction: column;
+    margin-top: -10px;
+}
+
+.cart-item-details p {
+    margin-bottom: 0;
+    font-size: 0.8rem;
+}
+
+.items {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    column-gap: 20px;
+    row-gap: 20px;
+}
+
+.item {
+    height: 350px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+}
+
+.item-details {
+    display: flex;
+    justify-content: space-between;
+}
+
+.hat-item1 {
+    background-image: url('/assets/brown-brim.png');
+}
+
+.hat-item2 {
+    background-image: url('/assets/blue-beanie.png');
+}
+
+.hat-item3 {
+    background-image: url('/assets/brown-cowboy.png');
+}
+
+.hat-item4 {
+    background-image: url('/assets/grey-brim.png');
+}
+
+.sneakers-item1 {
+    background-image: url('/assets/adidas-nmd.png');
+}
+
+.sneakers-item2 {
+    background-image: url('/assets/yeezy.png');
+}
+
+.sneakers-item3 {
+    background-image: url('/assets/black-converse.png');
+}
+
+.sneakers-item4 {
+    background-image: url('/assets/white-nike-high-tops.png');
+}
+
+.jacket-item1 {
+    background-image: url('/assets/black-shearling.png');
+}
+
+.jacket-item2 {
+    background-image: url('/assets/blue-jean-jacket.png');
+}
+
+.jacket-item3 {
+    background-image: url('/assets/grey-jean-jacket.png');
+}
+
+.jacket-item4 {
+    background-image: url('/assets/brown-shearling.png');
+}
+
+.women-item1 {
+    background-image: url('/assets/blue-tank.png');
+}
+
+.women-item2 {
+    background-image: url('/assets/floral-blouse.png');
+}
+
+.women-item3 {
+    background-image: url('/assets/red-polka-dot-dress.png');
+}
+
+.women-item4 {
+    background-image: url('/assets/floral-skirt.png');
+}
+
+.men-item1 {
+    background-image: url('/assets/camo-vest.png');
+}
+
+.men-item2 {
+    background-image: url('/assets/floral-shirt.png');
+}
+
+.men-item3 {
+    background-image: url('/assets/long-sleeve.png');
+}
+
+.men-item4 {
+    background-image: url('/assets/pink-shirt.png');
+}
+
+.add-cart {
+    background-color: #FEFEFE;
+    font-size: 0.9rem;
+    padding: 10px 70px;
+    margin-top: 250px;
+}
+
+.add-cart:hover {
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+
+/***** Checkout Page *******/
+.checkout-container {
+    padding: 0 80px;
+}
+
+.heading, .checkout-item {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    border-bottom: 1px solid #000;
+}
