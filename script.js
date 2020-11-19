@@ -20,18 +20,18 @@ const categories = [
         price: 25
       },
       {
-        name: 'Brown Brim',
-        image: 'brown-brim.png',
+        name: 'Blue Beanie',
+        image: 'blue-beanie.png',
         price: 25
       },
       {
-        name: 'Brown Brim',
-        image: 'brown-brim.png',
-        price: 25
+        name: 'Brown Cowboy',
+        image: 'brown-cowboy.png',
+        price: 36
       },
       {
-        name: 'Brown Brim',
-        image: 'brown-brim.png',
+        name: 'Grey Brim',
+        image: 'grey-brim.png',
         price: 25
       },
     ]
@@ -41,27 +41,105 @@ const categories = [
     name: 'Sneakers',
     items: [
       {
-        name: 'Brown Brim',
-        image: 'brown-brim.png',
-        price: 25
+        name: 'Adidas NMD',
+        image: 'adidas-nmd.png',
+        price: 220
       },
       {
-        name: 'Brown Brim',
-        image: 'brown-brim.png',
-        price: 25
+        name: 'Adidas Yeezy',
+        image: 'yeezy.png',
+        price: 280
       },
       {
-        name: 'Brown Brim',
-        image: 'brown-brim.png',
-        price: 25
+        name: 'Black Converse',
+        image: 'black-converse.png',
+        price: 110
       },
       {
-        name: 'Brown Brim',
-        image: 'brown-brim.png',
+        name: 'Nike White Air Force',
+        image: 'white-nike-high-tops.png',
         price: 25
       },
     ]
   },
+  {
+    id: 'jackets',
+    name: 'Jackets',
+    items: [
+      {
+        name: 'Black Shearling',
+        image: 'black-shearling.png',
+        price: 135
+      },
+      {
+        name: 'Blue Denim Jacket',
+        image: 'blue-jean-jacket.png',
+        price: 90
+      },
+      {
+        name: 'Grey Jacket',
+        image: 'grey-jean-jacket.png',
+        price: 90
+      },
+      {
+        name: 'Grey Brim',
+        image: 'brown-shearling.png',
+        price: 165
+      },
+    ]
+  },
+  {
+    id: 'women',
+    name: 'Women',
+    items: [
+      {
+        name: 'Blue Tanktop',
+        image: 'blue-tank.png',
+        price: 25
+      },
+      {
+        name: 'Floral Blouse',
+        image: 'floral-blouse.png',
+        price: 20
+      },
+      {
+        name: 'Red Dots Dress',
+        image: 'red-polka-dot-dress.png',
+        price: 80
+      },
+      {
+        name: 'Floral Dress',
+        image: 'floral-skirt.png',
+        price: 25
+      },
+    ]
+  },
+  {
+    id: 'men',
+    name: 'Men',
+    items: [
+      {
+        name: 'Camo Down Vest',
+        image: 'camo-vest.png',
+        price: 32
+      },
+      {
+        name: 'Floral T-shirt',
+        image: 'floral-shirt.png',
+        price: 20
+      },
+      {
+        name: 'Black & White Longsleeve',
+        image: 'long-sleeve.png',
+        price: 25
+      },
+      {
+        name: 'Pink T-shirt',
+        image: 'pink-shirt.png',
+        price: 25
+      },
+    ]
+  }
 ];
 
 categories.forEach(category => {
