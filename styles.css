@@ -78,18 +78,22 @@ span {
 
 .cart {
     width: 300px;
-    height: 250px;
+    height: 350px;
     border: 1px solid #000;
     overflow: auto;
     position: absolute;
-    right: 0;
-    display: none;
+    right: 20px;
     background-color: #FEFEFE;
     padding: 10px;
+    opacity: 0;
+    transition: 300ms;
+    pointer-events: none;
 }
 
 .cart.show {
     display: block;
+    opacity: 1;
+    pointer-events: auto;
 }
 
 .cart-item {
@@ -115,7 +119,7 @@ span {
 
 .items {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
     column-gap: 20px;
     row-gap: 20px;
 }

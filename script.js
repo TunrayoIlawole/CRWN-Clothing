@@ -3,8 +3,7 @@ const domElements = {
   cartIcon: document.querySelector('.cart-icon'),
   addCart: document.querySelectorAll('.add-cart'),
   itemCount: document.querySelector('.item-count'),
-  cart: document.querySelector('.cart'),
-  hatOne: document.getElementById('hat-one')
+  cart: document.querySelector('.cart')
 };
 
 let cart = [];
