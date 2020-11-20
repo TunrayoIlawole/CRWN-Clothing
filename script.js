@@ -2,21 +2,16 @@ const domElements = {
   shop: document.querySelector('.shop-body'),
   container: document.querySelector('.container'),
   container2: document.querySelector('.container2'),
-  cartIcon: document.querySelectorAll('.cart-icon'),
+  cartIcon: document.querySelector('.cart-icon'),
   addCart: document.querySelectorAll('.add-cart'),
   itemCount: document.querySelector('.item-count'),
   cart: document.querySelector('.cart'),
   checkoutContainer: document.querySelector('.checkout-container'),
 };
 
-Array.from(domElements.cartIcon).forEach(icon => {
-  icon.addEventListener('click', (e) => {
-    if (e.target.closest('.cart-icon')) {
-      domElements.cart.classList.toggle('show');
-    }
-  })
-});
-
+domElements.cartIcon.addEventListener('click', (e) => {
+  domElements.cart.classList.toggle('show');
+})
 
 let cart = [];
 let itemsInCart = 0;
@@ -189,11 +184,12 @@ categories.forEach(category => {
           quantity: 1
         });
       }
-      // persistData('cartItems', cart);
-      persistData('cartCount', itemsInCart);
       itemsInCart++;
 
-      renderCartItems();
+      window.persistData({key: 'cartItems', isObject: true, data: cart});
+      window.persistData({key: 'cartCount', isObject: false, data: itemsInCart});
+
+      window.renderCartItems(cart, itemsInCart);
     });
 
     imageDiv.append(addButton);
@@ -225,54 +221,19 @@ categories.forEach(category => {
   domElements.container.append(categoryDiv);
 });
 
-
-
-const renderCartItems = () => {
-  domElements.cart.innerHTML = '';
-
-  cart.forEach(cartItem => {
-    const markUp = `
-      <div class="cart-item">
-        <div class="item-image">
-          <img 
-            src="assets/${cartItem.image}" 
-            alt=${cartItem.name} 
-          />
-        </div>
-        <div class="cart-item-details">
-          <p>${cartItem.name}</p>
-          <p>${cartItem.quantity} X N${cartItem.price}</p>
-        </div>
-      </div>
-    `;
-
-    domElements.cart.innerHTML += markUp;
-  });
-
-  domElements.itemCount.innerHTML = itemsInCart;
-  
-
-};
-
-
-const persistData = (key, data) => {
-  localStorage.setItem(key, JSON.stringify(data));
-}
-
-const readStorage = (key, data) => {
-  const storage = JSON.parse(localStorage.getItem(key));
-
-  if(storage) {
-    console.log(storage);
-    data = storage;
-  }
-}
-
 window.addEventListener('load', () => {
-  readStorage('cartCount', itemsInCart);
-  readStorage('cartItems', cart);
-})
+  itemsInCart = window.readStorage({
+    key: 'cartCount',
+    isObject: false
+  })
 
+  cart = window.readStorage({
+    key: 'cartItems',
+    isObject: true
+  })
+
+  window.renderCartItems(cart, itemsInCart);
+})
 
 // domElements.hatOne.addEventListener('click', () => {
 //     counter += 1;
