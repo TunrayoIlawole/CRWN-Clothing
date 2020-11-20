@@ -1,22 +1,17 @@
 const domElements = {
-  shop: document.querySelector('.shop-body'),
-  container: document.querySelector('.container'),
-  container2: document.querySelector('.container2'),
-  cartIcon: document.querySelectorAll('.cart-icon'),
-  addCart: document.querySelectorAll('.add-cart'),
-  itemCount: document.querySelector('.item-count'),
-  cart: document.querySelector('.cart'),
-  checkoutContainer: document.querySelector('.checkout-container'),
+    cartIcon: document.querySelector('.cart-icon'),
+    itemCount: document.querySelector('.item-count'),
+    cart: document.querySelector('.cart'),
+    checkoutContainer: document.querySelector('.checkout-container'),
 };
 
-Array.from(domElements.cartIcon).forEach(icon => {
-  icon.addEventListener('click', (e) => {
-    if (e.target.closest('.cart-icon')) {
-      domElements.cart.classList.toggle('show');
-    }
-  })
-});
 
+
+domElements.cartIcon.addEventListener('click', (e) => {
+    if (e.target.closest('.cart-icon')) {
+    domElements.cart.classList.toggle('show');
+    }
+});
 
 let cart = [];
 let itemsInCart = 0;
@@ -189,11 +184,10 @@ categories.forEach(category => {
           quantity: 1
         });
       }
-      // persistData('cartItems', cart);
-      persistData('cartCount', itemsInCart);
-      itemsInCart++;
 
-      renderCartItems();
+      itemsInCart++
+
+      renderCartItems()
     });
 
     imageDiv.append(addButton);
@@ -208,7 +202,7 @@ categories.forEach(category => {
 
     const itemPrice = document.createElement('span');
     itemPrice.classList.add('price');
-    itemPrice.innerText = `N${item.price}`;
+    itemPrice.innerText = item.price;
 
     itemDetails.append(itemTitle);
     itemDetails.append(itemPrice);
@@ -250,47 +244,11 @@ const renderCartItems = () => {
   });
 
   domElements.itemCount.innerHTML = itemsInCart;
-  
+  persistData('cartCount', itemsInCart);
 
-};
-
+}
 
 const persistData = (key, data) => {
-  localStorage.setItem(key, JSON.stringify(data));
+    localStorage.setItem(key, data);
 }
-
-const readStorage = (key, data) => {
-  const storage = JSON.parse(localStorage.getItem(key));
-
-  if(storage) {
-    console.log(storage);
-    data = storage;
-  }
-}
-
-window.addEventListener('load', () => {
-  readStorage('cartCount', itemsInCart);
-  readStorage('cartItems', cart);
-})
-
-
-// domElements.hatOne.addEventListener('click', () => {
-//     counter += 1;
-//     counter1 += 1
-//     domElements.itemCount.textContent = counter;
-//     let itemName = domElements.hatOne.parentElement.parentElement.lastElementChild.firstElementChild.textContent;
-//     let itemPrice = domElements.hatOne.parentElement.parentElement.lastElementChild.lastElementChild.textContent;
-
-//     let markup = `
-//         <div class = "cart-item">
-//             <div class = "item-image">
-//                 <img src = "assets/${domElements.hatOne.parentElement.id}.png" />
-//             </div>
-//             <div class = "item-details">
-//                 <p>${itemName}</p>
-//                 <p>${counter1} X ${itemPrice}</p>
-//             </div>
-//         </div>`;
-
-//         domElements.cart.innerHTML = markup;
-// })
+  
