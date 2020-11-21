@@ -12,6 +12,10 @@ window.persistData = ({key,isObject, data}) => {
   localStorage.setItem(key, isObject ? JSON.stringify(data) : data);
 }
 
+// window.removeCartItem = ({key}) => {
+//   localStorage.removeItem(key);
+// }
+
 window.renderCartItems = (cart, itemsInCart) => {
   domElements.cart.innerHTML = '';
 

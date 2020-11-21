@@ -164,7 +164,7 @@ categories.forEach(category => {
 
     const imageDiv = document.createElement('div');
     imageDiv.classList.add('item');
-    imageDiv.style.backgroundImage = `url('/assets/${item.image}')`;
+    imageDiv.style.backgroundImage = `url('assets/${item.image}')`;
 
     const addButton = document.createElement('button');
     addButton.classList.add('add-cart');
@@ -220,6 +220,7 @@ categories.forEach(category => {
 
   domElements.container.append(categoryDiv);
 });
+
 
 window.addEventListener('load', () => {
   itemsInCart = window.readStorage({

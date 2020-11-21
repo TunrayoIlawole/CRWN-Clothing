@@ -30,6 +30,7 @@ span {
 }
 
 .container, .container2 {
+    width: 100%;
     padding: 0 30px;
     position: relative;
 }
@@ -135,6 +136,7 @@ span {
 .item-details {
     display: flex;
     justify-content: space-between;
+    margin-top: 10px;
 }
 
 .hat-item1 {
@@ -231,6 +233,10 @@ span {
 
 
 /***** Checkout Page *******/
+.container2 {
+    padding-bottom: 20px;
+}
+
 .checkout-container {
     padding: 0 80px;
 }
@@ -238,9 +244,129 @@ span {
 .heading, .checkout-item {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
+    column-gap: 10px;
     border-bottom: 1px solid #000;
 }
 
 .heading {
     margin-top: 100px;
+}
+
+.checkout-item {
+    height: 150px;
+    padding: 10px 0;
+}
+
+.checkout-item-image {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.arrow-left, .arrow-right {
+    margin: 20px 10px 0 10px;
+}
+
+.checkout-item-title, .checkout-item-price, .remove-item {
+    margin-top: 20px;
+}
+
+.arrow-left:hover, .arrow-right:hover, .remove-item:hover {
+    cursor: pointer;
+}
+
+.total-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.total-container .total {
+    font-weight: 600;
+}
+
+@media screen and (max-width: 600px) {
+    .heading h4 {
+        font-size: 0.9rem;
+    }
+
+    .checkout-item-title, .checkout-item-price, .remove-item {
+        font-size: 0.8rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .quantity-container {
+        display: flex;
+    }
+
+    .quantity {
+        margin-top: 20px;
+    }
+
+    .checkout-item-title, .checkout-item-price, .remove-item {
+        margin-top: 40px;
+    }
+
+    .quantity-container {
+        margin-top: 20px;
+    }
+
+    .heading h4 {
+        font-size: 0.6rem;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .main-nav ul li {
+        padding: 0 10px;
+    }
+    
+}
+
+@media screen and (max-width: 375px) {
+    .main-nav ul li {
+        padding: 0 5px;
+    }
+
+    .main-nav ul li a {
+        font-size: 0.7rem;
+    }
+
+    .items {
+        display: block;
+    }
+
+    .item {
+        margin-top: 10px;
+    }
+    
+}
+
+@media screen and (max-width: 315px) {
+    .container, .container2 {
+        padding: 0 10px;
+    }
+
+    .main-nav ul li {
+        padding: 0 2px;
+    }
+
+    .main-nav ul li a {
+        font-size: 0.5rem;
+    }
+
+    .cart {
+        width: 250px;
+    }
+
+    .add-cart {
+        padding: 10px 40px;
+    }
+}
+
+@media screen and (min-width: 1300px) {
+    body, .container, .container2 {
+        width: 100%;
+        margin: 0 auto;
+    }
 }
